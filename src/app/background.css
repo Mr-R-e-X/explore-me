@@ -1,0 +1,10 @@
+.dark_background {
+  background-image: url(../assets/dark-pattern.svg);
+  background-repeat: repeat;
+  background-position: center;
+}
+.light_background {
+  background-image: url(../assets/light-pattern.svg);
+  background-repeat: repeat;
+  background-position: center;
+}
