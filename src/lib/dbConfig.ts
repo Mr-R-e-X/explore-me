@@ -24,10 +24,10 @@ export default async function dbConnect(): Promise<void> {
   }
 }
 
-export async function dbDisconnect(): Promise<void> {
-  if (connection.isConnected) {
-    await mongoose.disconnect();
-    console.log("Disconnected from MongoDB");
-    connection.isConnected = 0;
-  }
-}
+// export async function dbDisconnect(): Promise<void> {
+//   if (connection.isConnected) {
+//     await mongoose.disconnect();
+//     console.log("Disconnected from MongoDB");
+//     connection.isConnected = 0;
+//   }
+// }
