@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useToast } from "@/hooks/use-toast";
 import { querySchema } from "@/schema/queryFormSchema";
 import { Label } from "@radix-ui/react-dropdown-menu";
