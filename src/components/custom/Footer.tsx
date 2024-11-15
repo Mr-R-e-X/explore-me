@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className="px-10 py-16 mt-8 flex flex-col md:flex-row md:justify-between justify-center md:items-start items-center gap-5">
+      <div className="px-10 py-16 flex flex-col md:flex-row md:justify-between justify-center md:items-start items-center gap-5">
         <div className="px-4">
           <h1 className="text-lg text-center md:text-start md:text-xl mb-4 font-bold tracking-wider">
             SOUVIK HAZRA
@@ -19,7 +19,7 @@ const Footer = () => {
             SOCIAL
           </h1>
           <div className="flex justify-between gap-3">
-            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max">
+            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max min-w-max">
               <a
                 href="https://www.linkedin.com/in/souvik-hazra-202321252/"
                 target="_blank"
@@ -32,12 +32,12 @@ const Footer = () => {
                 />
               </a>
             </div>
-            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max">
+            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max min-w-max">
               <a href="https://github.com/Mr-R-e-X" target="_blank">
                 <Image src="/github.svg" height={20} width={20} alt="github" />
               </a>
             </div>
-            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max">
+            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max min-w-max">
               <a href="mailto:souvikhazra151@gmail.com" target="_blank">
                 <Image src="/mail.svg" height={20} width={20} alt="mail" />
               </a>

@@ -17,21 +17,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { handleScroll } from "@/hooks/handleInnerLink";
 
 const Header = () => {
   const handleInnerLinks = (e: SyntheticEvent, id: string): void => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const elementTop = element.getBoundingClientRect().top;
-      const offset = 90;
-
-      const scrollToPosition = window.scrollY + elementTop - offset;
-
-      window.scrollTo({
-        top: scrollToPosition,
-        behavior: "smooth",
-      });
+      handleScroll(element);
     }
   };
 

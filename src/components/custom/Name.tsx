@@ -2,12 +2,21 @@
 import { catchLine, myName } from "@/constants/constants";
 import { typeWriter } from "@/hooks/typeWriter";
 import { BriefcaseBusiness } from "lucide-react";
-import { useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import { Button } from "../ui/button";
+import { handleScroll } from "@/hooks/handleInnerLink";
 
 const Name = () => {
   const [mainTitle, setMainTitle] = useState<string>("");
   const [subtitle, setSubTitle] = useState<string>("");
+
+  const handleInnerLinks = (e: SyntheticEvent, id: string): void => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      handleScroll(element);
+    }
+  };
 
   useEffect(() => {
     typeWriter({ delay: 110, text: myName, setValue: setMainTitle });
@@ -28,7 +37,8 @@ const Name = () => {
 
       <Button
         variant="outline"
-        className="text-lg bg-[#4F4D69] text-white relative ml-6 font-bold w-max top-1 h-max px-8 py-3 tracking-widest shadow-md hover:shadow-lg hover:scale-105 hover:top-0 transition-all duration-100 ease-linear text-center"
+        onClick={(e) => handleInnerLinks(e, "projectSection")}
+        className="text-lg bg-[#4F4D69] text-white relative  font-bold w-max top-1 h-max px-8 py-3 tracking-widest shadow-md hover:shadow-lg hover:scale-105 hover:top-0 transition-all duration-100 ease-linear text-center"
       >
         <BriefcaseBusiness /> <span>PROJECTS</span>
       </Button>

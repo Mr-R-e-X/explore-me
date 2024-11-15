@@ -23,7 +23,7 @@ export default function Home() {
         <About />
         <Experience />
         <Projects />
-        <div className="h-[90vh] light_background">
+        <div className="h-[90vh] min-h-max light_background">
           <Contact />
         </div>
       </main>
