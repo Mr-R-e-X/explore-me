@@ -37,7 +37,7 @@ const Name = () => {
 
       <Button
         variant="outline"
-        onClick={(e) => handleInnerLinks(e, "projectSection")}
+        onClick={(e) => handleInnerLinks(e, "projectsSection")}
         className="text-lg bg-[#4F4D69] text-white relative  font-bold w-max top-1 h-max px-8 py-3 tracking-widest shadow-md hover:shadow-lg hover:scale-105 hover:top-0 transition-all duration-100 ease-linear text-center"
       >
         <BriefcaseBusiness /> <span>PROJECTS</span>
