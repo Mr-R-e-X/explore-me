@@ -7,7 +7,7 @@ export const querySchema = z.object({
     .max(50, "The maximum 50 characters are allowed"),
   email: z
     .string()
-    .min(10, "The email should contain atleast 10 characters")
+    .min(5, "The email should contain atleast 5 characters")
     .max(50, "The maximum 50 characters are allowed"),
   message: z
     .string()
