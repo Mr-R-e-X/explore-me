@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="w-full fixed h-max lg:px-12 md:px-8 px-2 py-4 flex flex-row justify-between bg-[#FEFEFE] text-[#4A4A65] text-base items-center shadow-lg shadow-gray-500 transition-all duration-100 ease-linear z-10">
+    <nav className="w-full fixed h-max lg:px-12 md:px-8 px-2 py-4 flex flex-row justify-between  backdrop-blur-md text-[#4A4A65] text-base items-center shadow-lg shadow-gray-500 transition-all duration-100 ease-linear z-10">
       <div className="flex flex-row items-center justify-start gap-2 font-bold  hover:text-violet-500">
         <Image
           src="/header_profile_img.png"
