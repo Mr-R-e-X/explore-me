@@ -1,4 +1,5 @@
 import { aboutMesubtitle } from "@/constants/constants";
+import { Download } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -40,6 +41,11 @@ const Footer = () => {
             <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max min-w-max">
               <a href="mailto:souvikhazra151@gmail.com" target="_blank">
                 <Image src="/mail.svg" height={20} width={20} alt="mail" />
+              </a>
+            </div>
+            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max min-w-max">
+              <a href="/SOUVIK_HAZRA.pdf" download>
+                <Download height={20} width={20} className="text-black" />
               </a>
             </div>
           </div>
