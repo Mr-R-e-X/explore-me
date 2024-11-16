@@ -8,6 +8,7 @@ import {
   Contact,
   MenuIcon,
   Briefcase,
+  Download,
 } from "lucide-react";
 
 import {
@@ -17,6 +18,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { handleScroll } from "@/hooks/handleInnerLink";
 
 const Header = () => {
@@ -175,41 +182,71 @@ const Header = () => {
                   </a>
                 </div>
               </div>
-              <div className="flex flex-row justify-center items-center mt-4">
-                <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100">
-                  <a
-                    href="https://www.linkedin.com/in/souvik-hazra-202321252/"
-                    target="_blank"
-                  >
-                    <Image
-                      src="/linkedin.svg"
-                      height={30}
-                      width={30}
-                      alt="linkedin"
-                    />
-                  </a>
+              <TooltipProvider>
+                <div className="flex flex-row justify-center items-center mt-4">
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100">
+                        <a
+                          href="https://www.linkedin.com/in/souvik-hazra-202321252/"
+                          target="_blank"
+                        >
+                          <Image
+                            src="/linkedin.svg"
+                            height={30}
+                            width={30}
+                            alt="linkedin"
+                          />
+                        </a>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>LinkedIn</TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100 ">
+                        <a href="https://github.com/Mr-R-e-X" target="_blank">
+                          <Image
+                            src="/github.svg"
+                            height={30}
+                            width={30}
+                            alt="github"
+                          />
+                        </a>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>GitHub</TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100">
+                        <a
+                          href="mailto:souvikhazra151@gmail.com"
+                          target="_blank"
+                        >
+                          <Image
+                            src="/mail.svg"
+                            height={30}
+                            width={30}
+                            alt="mail"
+                          />
+                        </a>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>Email</TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100">
+                        <a href="/SOUVIK_HAZRA.pdf" download>
+                          <Download height={30} width={30} />
+                        </a>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>Resume</TooltipContent>
+                  </Tooltip>
                 </div>
-                <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100 ">
-                  <a href="https://github.com/Mr-R-e-X" target="_blank">
-                    <Image
-                      src="/github.svg"
-                      height={30}
-                      width={30}
-                      alt="linkedin"
-                    />
-                  </a>
-                </div>
-                <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100">
-                  <a href="mailto:souvikhazra151@gmail.com" target="_blank">
-                    <Image
-                      src="/mail.svg"
-                      height={30}
-                      width={30}
-                      alt="linkedin"
-                    />
-                  </a>
-                </div>
-              </div>
+              </TooltipProvider>
             </SheetContent>
           </Sheet>
         </div>
