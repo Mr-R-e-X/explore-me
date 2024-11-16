@@ -104,7 +104,7 @@ const QueryForMe = ({ username, email, message }: QueryMailProps) => {
 
           <Section style={{ textAlign: "center", marginTop: "20px" }}>
             <Button
-              href={`mailto:${process.env.NEXT_PUBLIC_MY_MAIL}`}
+              href={`mailto:${email}`}
               style={{
                 backgroundColor: "#007bff",
                 color: "#ffffff",

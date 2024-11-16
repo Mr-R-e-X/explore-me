@@ -119,7 +119,7 @@ const QueryMail = ({ username, email }: QueryMailProps) => {
 
           <Section style={{ textAlign: "center", marginTop: "20px" }}>
             <Button
-              href="mailto:souvikhazra151@gmail.com"
+              href={`mailto:${process.env.NEXT_PUBLIC_MY_MAIL}`}
               style={{
                 backgroundColor: "#007bff",
                 color: "#ffffff",
