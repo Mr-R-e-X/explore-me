@@ -21,7 +21,7 @@ const Experience = () => {
         <div className="lg:w-2/3 w-full flex flex-col lg:flex-row">
           <div className=" lg:w-2/3">
             <h2 className="font-bold text-xl tracking-wider text-[#3f3f56] mb-4 text-center lg:text-start">
-              Teaching Assistant for Full Stack Development ~ Intern
+              Teaching Assistant for Full Stack Development
             </h2>
             <div className="text-sm tracking-wider text-[#5c5c7e] mb-2 flex felx-row justify-center lg:justify-start items-center gap-2 font-semibold">
               <Image
