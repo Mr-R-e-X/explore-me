@@ -14,6 +14,4 @@ export const querySchema = z.object({
     .min(10, "The message should contain atleast 10 characters"),
 });
 
-// export const formSchema = z.object({
-//   data: querySchema,
-// });
+

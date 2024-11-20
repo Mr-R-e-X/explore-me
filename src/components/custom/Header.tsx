@@ -9,6 +9,8 @@ import {
   MenuIcon,
   Briefcase,
   Download,
+  // Sun,
+  // Moon,
 } from "lucide-react";
 
 import {
@@ -20,8 +22,11 @@ import {
 } from "@/components/ui/sheet";
 
 import { handleScroll } from "@/hooks/handleInnerLink";
+// import { useCurrentTheme } from "@/contexts/themeContext";
 
 const Header = () => {
+  // const themeContext = useCurrentTheme();
+
   const handleInnerLinks = (e: SyntheticEvent, id: string): void => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -29,9 +34,14 @@ const Header = () => {
       handleScroll(element);
     }
   };
+  // const changeTheme = () => {
+  //   themeContext.setPresetTheme(
+  //     themeContext.theme === "light" ? "dark" : "light"
+  //   );
+  // };
 
   return (
-    <nav className="w-full fixed h-max lg:px-12 md:px-8 px-2 py-4 flex flex-row justify-between  backdrop-blur-md text-[#4A4A65] text-base items-center shadow-lg shadow-gray-500 transition-all duration-100 ease-linear z-10">
+    <nav className="w-full fixed h-max lg:px-12 md:px-8 px-2 py-4 flex flex-row justify-between  backdrop-blur-md text-[#4A4A65] dark:text-white text-base items-center shadow-lg shadow-gray-500 transition-all duration-100 ease-linear z-10">
       <div className="flex flex-row items-center justify-start gap-2 font-bold  hover:text-violet-500">
         <Image
           src="/header_profile_img.png"
@@ -45,7 +55,8 @@ const Header = () => {
           <span className="tracking-wider"> HAZRA</span>
         </p>
       </div>
-      <div>
+
+      <div className="flex flex-row items-center justify-end">
         <div
           className={`hidden lg:flex flex-row justify-end gap-4 font-bold tracking-widest text-sm `}
         >
@@ -100,6 +111,13 @@ const Header = () => {
             </a>
           </div>
         </div>
+        {/* <div className="cursor-pointer mx-4" onClick={changeTheme}>
+          {themeContext.theme === "light" ? (
+            <Sun className="h-[2rem]" />
+          ) : (
+            <Moon className="h-[2rem]" />
+          )}
+        </div> */}
         <div className="flex flex-row justify-end mr-2 lg:hidden ">
           <Sheet>
             <SheetTrigger>

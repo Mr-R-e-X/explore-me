@@ -63,7 +63,7 @@ const About = () => {
                   width={30}
                   alt={`${skill.title}`}
                 />{" "}
-                <span className="font-semibold text-sm text-[#4A4A65]">
+                <span className="font-semibold text-sm text-[#4A4A65] hidden md:block">
                   {skill.title}
                 </span>
               </Button>

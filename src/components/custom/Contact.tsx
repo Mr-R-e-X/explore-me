@@ -94,7 +94,7 @@ const Contact = () => {
         <form
           method="post"
           onSubmit={handleSubmit}
-          className="w-[90vw] lg:w-4/6 flex justify-center flex-col mx-auto p-10 rounded-xl bg-gray-100"
+          className="w-[90vw] lg:w-4/6 flex justify-center flex-col mx-auto p-10 rounded-xl bg-transparent"
         >
           <div className="mb-6">
             <Input
