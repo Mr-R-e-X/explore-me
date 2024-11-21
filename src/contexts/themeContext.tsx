@@ -21,13 +21,11 @@ const useCurrentTheme = (): ThemeContextType => {
 };
 
 const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
-  const [theme, setTheme] = useState<string>(
-    JSON.stringify(localStorage.getItem("theme")!) || "light"
-  );
+  const [theme, setTheme] = useState<string>("light");
   const setPresetTheme = (newTheme: string) => {
     document.body.classList.remove(theme);
     document.body.classList.add(newTheme);
-    localStorage.setItem("theme", newTheme);
+
     setTheme(newTheme);
   };
   return (
