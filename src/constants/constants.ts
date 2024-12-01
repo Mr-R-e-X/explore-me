@@ -93,6 +93,17 @@ export const projects: Array<{
   tools: Array<string>;
 }> = [
   {
+    title: "Flow Maker",
+    desc: "The Flow Maker app, built using the MERN stack, enables users to easily create and manage email sequences with automated emails and scheduled tasks. It allows for bulk lead uploads via CSV files, streamlining the process of managing contacts. Additionally, users can create custom email templates to personalize their outreach, making it an efficient tool for managing workflows and communication.",
+    imgSrc: "",
+    url: "https://flow-maker-frontend-dxr7.vercel.app/",
+    github: [
+      "https://github.com/Mr-R-e-X/Flow_Maker_Frontend",
+      "https://github.com/Mr-R-e-X/Flow_Maker_Backend",
+    ],
+    tools: ["React", "Node.js", "Express.js", "MongoDB"],
+  },
+  {
     title: "Mystry Message",
     desc: "Mystry Message is an anonymous feedback and Q&A platform where users can sign up, generate a unique feedback link, and share it with others. Anyone with the link can send anonymous feedback or ask questions, ensuring privacy and open communication. The feedback page integrates OpenAI's ChatGPT 4.0, providing smart message suggestions to assist users in crafting responses. This feature enriches the feedback experience, helping users reply thoughtfully and quickly.",
     imgSrc: "",
