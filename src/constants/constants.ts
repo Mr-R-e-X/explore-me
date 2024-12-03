@@ -32,7 +32,7 @@ export const skills: Array<{ title: string; imgSrc: string }> = [
     imgSrc: "/nextjs.svg",
   },
   {
-    title: "Redux",
+    title: "Redux Toolkit",
     imgSrc: "/redux.svg",
   },
   {
