@@ -48,6 +48,10 @@ export const skills: Array<{ title: string; imgSrc: string }> = [
     imgSrc: "/postgresql.svg",
   },
   {
+    title: "Redis",
+    imgSrc: "/redis.svg",
+  },
+  {
     title: "Socket.io",
     imgSrc: "/socket-io.svg",
   },
