@@ -1,6 +1,6 @@
 export const myName = "HEY, I'M SOUVIK HAZRA.";
 export const catchLine = `From server to client-side, I create comprehensive web solutions that fuel the product’s success. `;
-export const aboutMesubtitle = `I'm a full-stack developer dedicated to creating cohesive, end-to-end experiences—from server to client.`;
+export const aboutMesubtitle = `I'm a Software developer dedicated to creating cohesive, end-to-end experiences—from server to client.`;
 export const aboutMeParagraphs = [
   "I'm a Full-Stack Web Developer with expertise in building and managing both the client and server sides of websites and web applications that support product success.",
   "Check out my Projects section to see my work, and you can explore my code on GitHub. Feel free to connect with me on LinkedIn.",
@@ -40,6 +40,14 @@ export const skills: Array<{ title: string; imgSrc: string }> = [
     imgSrc: "/node-js.svg",
   },
   {
+    title: "NestJs",
+    imgSrc: "/nestjs.svg",
+  },
+  {
+    title: "GraphQL",
+    imgSrc: "/gql.svg",
+  },
+  {
     title: "MongoDB",
     imgSrc: "/mongodb.svg",
   },
@@ -50,6 +58,10 @@ export const skills: Array<{ title: string; imgSrc: string }> = [
   {
     title: "Redis",
     imgSrc: "/redis.svg",
+  },
+  {
+    title: "Jest ",
+    imgSrc: "/jest.svg",
   },
   {
     title: "Socket.io",
@@ -85,6 +97,53 @@ export const skillExp: Array<{ title: string; imgSrc: string }> = [
   {
     title: "Socket.io",
     imgSrc: "/socket-io.svg",
+  },
+];
+
+export const edvSkills: Array<{ title: string; imgSrc: string }> = [
+  {
+    title: "HTML",
+    imgSrc: "/html.svg",
+  },
+  {
+    title: "CSS",
+    imgSrc: "/css.svg",
+  },
+  {
+    title: "TailwindCss",
+    imgSrc: "/tailwindcss.svg",
+  },
+  {
+    title: "JavaScript",
+    imgSrc: "/js.svg",
+  },
+  {
+    title: "NodeJs",
+    imgSrc: "/node-js.svg",
+  },
+  {
+    title: "TypeScript",
+    imgSrc: "/typescript.svg",
+  },
+  {
+    title: "React",
+    imgSrc: "/reactjs.svg",
+  },
+  {
+    title: "MongoDB",
+    imgSrc: "/mongodb.svg",
+  },
+  {
+    title: "NestJs",
+    imgSrc: "/nestjs.svg",
+  },
+  {
+    title: "GraphQL",
+    imgSrc: "/gql.svg",
+  },
+  {
+    title: "Jest",
+    imgSrc: "/jest.svg",
   },
 ];
 

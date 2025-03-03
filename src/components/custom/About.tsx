@@ -51,12 +51,16 @@ const About = () => {
           </Button>
         </div>
         <div className="w-full flex flex-col items-center lg:items-start lg:w-1/2">
-          <h1 className="font-bold text-xl lg:text-xl tracking-wider text-[#3f3f56] my-4">
+          <h1 className="font-bold text-xl lg:text-xl tracking-wider text-[#3f3f56] my-2">
             MY SKILLS
           </h1>
-          <div className="flex flex-row flex-wrap gap-3 justify-center lg:justify-start items-center px-4">
+          <div className="gird  auto-cols-auto gap-2 justify-center lg:justify-start items-center px-4">
             {skills.map((skill, idx) => (
-              <Button variant={"outline"} key={idx} className="w-max px-3 py-6">
+              <Button
+                variant={"outline"}
+                key={idx}
+                className="w-max px-3 py-6 my-2 mx-1"
+              >
                 <Image
                   src={`${skill.imgSrc}`}
                   height={30}
