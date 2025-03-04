@@ -111,7 +111,7 @@ const Experience = () => {
               SUNRISE MENTORS PRIVATE LIMITED
             </div>
             <p className="text-sm tracking-wider text-[#5c5c7e] text-center lg:text-start">
-              <span className="text-gray-600">2024-JAN to Present</span>
+              <span className="text-gray-600">2024-JAN to 2025-JAN</span>
             </p>
           </div>
           <div className="flex flex-row flex-wrap justify-center lg:justify-start items-center gap-1 mt-2 lg:mt-0 lg:w-1/3 h-max">
@@ -126,7 +126,7 @@ const Experience = () => {
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-base font-semibold">
               RESPONSIBILITIES
-            </AccordionTrigger> 
+            </AccordionTrigger>
             <AccordionContent className="text-base text-wrap font-semibold text-[#5c5c7e] pl-2">
               Conducted one-on-one doubt-clearing sessions, providing
               personalized support to help students understand complex concepts.
