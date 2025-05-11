@@ -1,14 +1,14 @@
-"use client";
-import { catchLine, myName } from "@/constants/constants";
-import { typeWriter } from "@/hooks/typeWriter";
-import { BriefcaseBusiness } from "lucide-react";
-import { SyntheticEvent, useEffect, useState } from "react";
-import { Button } from "../ui/button";
-import { handleScroll } from "@/hooks/handleInnerLink";
+'use client';
+import { catchLine, myName } from '@/constants/constants';
+import { typeWriter } from '@/hooks/typeWriter';
+import { BriefcaseBusiness } from 'lucide-react';
+import { SyntheticEvent, useEffect, useState } from 'react';
+import { Button } from '../ui/button';
+import { handleScroll } from '@/hooks/handleInnerLink';
 
 const Name = () => {
-  const [mainTitle, setMainTitle] = useState<string>("");
-  const [subtitle, setSubTitle] = useState<string>("");
+  const [mainTitle, setMainTitle] = useState<string>('');
+  const [subtitle, setSubTitle] = useState<string>('');
 
   const handleInnerLinks = (e: SyntheticEvent, id: string): void => {
     e.preventDefault();
@@ -24,10 +24,7 @@ const Name = () => {
   }, []);
 
   return (
-    <div
-      className="flex flex-col h-screen items-center justify-center w-full"
-      id={"homeSection"}
-    >
+    <div className="flex flex-col h-screen items-center justify-center w-full" id={'homeSection'}>
       <div className="lg:text-6xl md:text-5xl text-4xl font-bold tracking-wider text-[#3f3f56] my-8 mx-4">
         <h1 className="text-center">{mainTitle}</h1>
       </div>
@@ -37,7 +34,7 @@ const Name = () => {
 
       <Button
         variant="outline"
-        onClick={(e) => handleInnerLinks(e, "projectsSection")}
+        onClick={(e) => handleInnerLinks(e, 'projectsSection')}
         className="text-lg bg-[#4F4D69] text-white relative  font-bold w-max top-1 h-max px-8 py-3 tracking-widest shadow-md hover:shadow-lg hover:scale-105 hover:top-0 transition-all duration-100 ease-linear text-center"
       >
         <BriefcaseBusiness /> <span>PROJECTS</span>
