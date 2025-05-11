@@ -156,6 +156,14 @@ export const projects: Array<{
     tools: ['MongoDB', 'ReactJS', 'Node.js', 'Express.js', 'Socket.IO', 'WebRTC'],
   },
   {
+    title: 'Kanban Board Application',
+    desc: 'A task management tool allowing users to organize and track tasks visually using lists and cards. Features include user authentication, personal boards, list creation and management, task handling with titles, descriptions, due dates, and priority levels, and drag-and-drop functionality for task reordering. Built with React and Vite for the frontend, Express.js for the backend, and MongoDB for data storage. This app provides an intuitive way for users to manage their workflows efficiently.',
+    imgSrc: '',
+    url: 'https://kanban-board-swart-eta.vercel.app/',
+    github: ['https://github.com/Mr-R-e-X/Kanban_board'],
+    tools: ['MongoDB', 'ReactJS', 'Node.js', 'Express.js', 'ReactDnD', 'daisyui'],
+  },
+  {
     title: 'Easily Api',
     desc: 'A powerful job search REST API where users can explore job listings, apply to positions, and save jobs for future reference. Companies have a streamlined interface to post job openings, manage applications, and view detailed applicant information.',
     imgSrc: '',
