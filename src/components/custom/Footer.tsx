@@ -1,61 +1,66 @@
-import { aboutMesubtitle } from "@/constants/constants";
-import { Download } from "lucide-react";
-import Image from "next/image";
-import React from "react";
+import { aboutMesubtitle } from '@/constants/constants';
+import { Download } from 'lucide-react';
+import Image from 'next/image';
+import React from 'react';
 
 const Footer = () => {
   return (
-    <>
-      <div className="px-10 py-16 flex flex-col md:flex-row md:justify-between justify-center md:items-start items-center gap-5">
-        <div className="px-4">
-          <h1 className="text-lg text-center md:text-start md:text-xl mb-4 font-bold tracking-wider">
+    <footer className="bg-white border-t pt-12 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+        {/* Left Section */}
+        <div>
+          <h2 className="text-xl font-bold tracking-wide mb-2 text-center md:text-left">
             SOUVIK HAZRA
-          </h1>
-          <p className="ml-4 text-center md:text-start font-semibold">
-            {aboutMesubtitle}
-          </p>
+          </h2>
+          <p className="text-gray-700 font-medium text-center md:text-left">{aboutMesubtitle}</p>
         </div>
-        <div className="px-4 mt-4 md:mt-0 ">
-          <h1 className="text-lg md:text-xl text-center font-bold tracking-wider">
-            SOCIAL
-          </h1>
-          <div className="flex justify-between gap-3">
-            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max min-w-max">
-              <a
-                href="https://www.linkedin.com/in/souvik-hazra-202321252/"
-                target="_blank"
-              >
-                <Image
-                  src="/linkedin.svg"
-                  height={20}
-                  width={20}
-                  alt="linkedin"
-                />
-              </a>
-            </div>
-            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max min-w-max">
-              <a href="https://github.com/Mr-R-e-X" target="_blank">
-                <Image src="/github.svg" height={20} width={20} alt="github" />
-              </a>
-            </div>
-            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max min-w-max">
-              <a href="mailto:souvikhazra151@gmail.com" target="_blank">
-                <Image src="/mail.svg" height={20} width={20} alt="mail" />
-              </a>
-            </div>
-            <div className="p-1 my-2 border rounded-sm cursor-pointer bg-gray-100 h-max min-w-max">
-              <a href="/SOUVIK_HAZRA.pdf" download>
-                <Download height={20} width={20} className="text-black" />
-              </a>
-            </div>
+
+        {/* Right Section */}
+        <div className="flex flex-col items-center md:items-end">
+          <h2 className="text-xl font-bold tracking-wide mb-2">SOCIAL</h2>
+          <div className="flex gap-4 flex-wrap justify-center md:justify-end">
+            <a
+              href="https://www.linkedin.com/in/souvik-hazra-202321252/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-100 border rounded-md p-2 hover:bg-gray-200 transition"
+              aria-label="LinkedIn"
+            >
+              <Image src="/linkedin.svg" alt="linkedin" width={20} height={20} />
+            </a>
+            <a
+              href="https://github.com/Mr-R-e-X"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-100 border rounded-md p-2 hover:bg-gray-200 transition"
+              aria-label="GitHub"
+            >
+              <Image src="/github.svg" alt="github" width={20} height={20} />
+            </a>
+            <a
+              href="mailto:souvikhazra151@gmail.com"
+              className="bg-gray-100 border rounded-md p-2 hover:bg-gray-200 transition"
+              aria-label="Email"
+            >
+              <Image src="/mail.svg" alt="mail" width={20} height={20} />
+            </a>
+            <a
+              href="/SOUVIK_HAZRA.pdf"
+              download
+              className="bg-gray-100 border rounded-md p-2 hover:bg-gray-200 transition"
+              aria-label="Download Resume"
+            >
+              <Download height={20} width={20} className="text-black" />
+            </a>
           </div>
         </div>
       </div>
-      <hr className="w-[80%] mx-auto" />
-      <div className="px-10 py-4 text-sm text-center">
-        <p> &copy; All rights reserved 2024. Made with 💖 by Souvik Hazra </p>
+
+      <hr className="my-8 border-gray-300" />
+      <div className="text-center text-sm text-gray-600 pb-6">
+        &copy; {new Date().getFullYear()} All rights reserved. Made with 💖 by Souvik Hazra.
       </div>
-    </>
+    </footer>
   );
 };
 

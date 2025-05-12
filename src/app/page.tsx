@@ -1,13 +1,13 @@
-import FixedSocialMedia from "@/components/custom/FixedSocialMedia";
-import Header from "@/components/custom/Header";
-import MouseScrollAnimatiion from "@/components/custom/MouseScrollAnimatiion";
-import Name from "@/components/custom/Name";
-import "./background.css";
-import About from "@/components/custom/About";
-import Experience from "@/components/custom/Experience";
-import Projects from "@/components/custom/Projects";
-import Contact from "@/components/custom/Contact";
-import Footer from "@/components/custom/Footer";
+import FixedSocialMedia from '@/components/custom/FixedSocialMedia';
+import Header from '@/components/custom/Header';
+import MouseScrollAnimatiion from '@/components/custom/MouseScrollAnimatiion';
+import Name from '@/components/custom/Name';
+import './background.css';
+import About from '@/components/custom/About';
+import Experience from '@/components/custom/Experience';
+import Projects from '@/components/custom/Projects';
+import Contact from '@/components/custom/Contact';
+import Footer from '@/components/custom/Footer';
 
 export default function Home() {
   return (
@@ -23,13 +23,9 @@ export default function Home() {
         <About />
         <Experience />
         <Projects />
-        <div className="h-[90vh] min-h-max light_background">
-          <Contact />
-        </div>
+        <Contact />
       </main>
-      <footer className="bg-black text-white">
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,6 @@
-"use client";
-import Image from "next/image";
-import React, { SyntheticEvent } from "react";
+'use client';
+import Image from 'next/image';
+import React, { SyntheticEvent } from 'react';
 import {
   HomeIcon,
   LaughIcon,
@@ -9,233 +9,142 @@ import {
   MenuIcon,
   Briefcase,
   Download,
-  // Sun,
-  // Moon,
-} from "lucide-react";
-
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-
-import { handleScroll } from "@/hooks/handleInnerLink";
-// import { useCurrentTheme } from "@/contexts/themeContext";
+} from 'lucide-react';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { handleScroll } from '@/hooks/handleInnerLink';
+import { ModalActionEnum, useModal } from '@/contexts/modalContext';
 
 const Header = () => {
-  // const themeContext = useCurrentTheme();
+  const { dispatch } = useModal();
 
   const handleInnerLinks = (e: SyntheticEvent, id: string): void => {
     e.preventDefault();
     const element = document.getElementById(id);
-    if (element) {
-      handleScroll(element);
-    }
+    if (element) handleScroll(element);
   };
-  // const changeTheme = () => {
-  //   themeContext.setPresetTheme(
-  //     themeContext.theme === "light" ? "dark" : "light"
-  //   );
-  // };
+
+  const navLinks = [
+    { label: 'HOME', icon: <HomeIcon className="h-4 w-4" />, id: 'homeSection' },
+    { label: 'ABOUT', icon: <LaughIcon className="h-4 w-4" />, id: 'aboutSection' },
+    { label: 'EXPERIENCE', icon: <Briefcase className="h-4 w-4" />, id: 'experienceSection' },
+    { label: 'PROJECTS', icon: <BriefcaseBusiness className="h-4 w-4" />, id: 'projectsSection' },
+  ];
 
   return (
-    <nav className="w-full fixed h-max lg:px-12 md:px-8 px-2 py-4 flex flex-row justify-between  backdrop-blur-md text-[#4A4A65] dark:text-white text-base items-center shadow-lg shadow-gray-500 transition-all duration-100 ease-linear z-10">
-      <div className="flex flex-row items-center justify-start gap-2 font-bold  hover:text-violet-500">
+    <nav className="fixed top-0 w-full z-50 backdrop-blur-md shadow-md px-4 lg:px-12 py-4 text-[#4A4A65] dark:text-white bg-opacity-70 flex items-center justify-between">
+      {/* Logo */}
+      <div className="flex items-center gap-3 font-bold text-base cursor-pointer hover:text-violet-500">
         <Image
           src="/header_profile_img.png"
           alt="souvik_hazra"
-          width={50}
-          height={50}
-          className="h-full rounded-full bg-cover bg-top  border-violet-500 border-2"
+          width={40}
+          height={40}
+          className="rounded-full border-2 border-violet-500"
         />
-        <p className="cursor-pointer">
-          <span className="tracking-wider">SOUVIK</span>
-          <span className="tracking-wider"> HAZRA</span>
-        </p>
+        <span className="tracking-widest">SOUVIK HAZRA</span>
       </div>
 
-      <div className="flex flex-row items-center justify-end">
-        <div
-          className={`hidden lg:flex flex-row justify-end gap-4 font-bold tracking-widest text-sm `}
+      {/* Desktop Links */}
+      <div className="hidden lg:flex items-center gap-6 text-sm font-semibold tracking-wide">
+        {navLinks.map((link) => (
+          <a
+            key={link.label}
+            href={`#${link.id}`}
+            onClick={(e) => handleInnerLinks(e, link.id)}
+            className="flex items-center gap-1 hover:text-violet-600 transition-colors"
+          >
+            {link.icon}
+            <span>{link.label}</span>
+          </a>
+        ))}
+        <button
+          onClick={() => dispatch({ type: ModalActionEnum.OPEN_CONTACT })}
+          className="flex items-center gap-1 hover:text-violet-600 transition-colors"
         >
-          <div className="cursor-pointer mx-4 ">
-            <a
-              href="#homeSection"
-              onClick={(e) => handleInnerLinks(e, "homeSection")}
-              className="flex flex-row items-center gap-1"
-            >
-              <HomeIcon className="h-[1rem]" />
-              <span>HOME</span>
-            </a>
-          </div>
-          <div className="cursor-pointer mx-4">
-            <a
-              href="#aboutSection"
-              onClick={(e) => handleInnerLinks(e, "aboutSection")}
-              className="flex flex-row items-center gap-1"
-            >
-              <LaughIcon className="h-[1rem]" />
-              <span>ABOUT</span>
-            </a>
-          </div>
-          <div className="cursor-pointer mx-4 ">
-            <a
-              href="#experienceSection"
-              onClick={(e) => handleInnerLinks(e, "experienceSection")}
-              className="flex flex-row items-center gap-1"
-            >
-              <Briefcase className="h-[1rem]" />
-              <span>EXPERIENCE</span>
-            </a>
-          </div>
-          <div className="cursor-pointer mx-4 ">
-            <a
-              href="#projectsSection"
-              onClick={(e) => handleInnerLinks(e, "projectsSection")}
-              className="flex flex-row items-center gap-1"
-            >
-              <BriefcaseBusiness className="h-[1rem]" />
-              <span>PROJECTS</span>
-            </a>
-          </div>
-          <div className="cursor-pointer mx-4 ">
-            <a
-              href="#contactSection"
-              onClick={(e) => handleInnerLinks(e, "contactSection")}
-              className="flex flex-row items-center gap-1"
-            >
-              <Contact className="h-[1rem]" />
-              <span>CONTACT</span>
-            </a>
-          </div>
-        </div>
-        {/* <div className="cursor-pointer mx-4" onClick={changeTheme}>
-          {themeContext.theme === "light" ? (
-            <Sun className="h-[2rem]" />
-          ) : (
-            <Moon className="h-[2rem]" />
-          )}
-        </div> */}
-        <div className="flex flex-row justify-end mr-2 lg:hidden ">
-          <Sheet>
-            <SheetTrigger>
-              <div className="border border-black p-1 rounded-md">
-                <MenuIcon />
-              </div>
-            </SheetTrigger>
-            <SheetContent className="bg-[#FEFEFE]">
-              <SheetHeader>
-                <SheetTitle className="text-[#4A4A65] mb-4">
-                  <div className="flex flex-row items-center justify-start gap-2 font-bold  hover:text-violet-500">
-                    <Image
-                      src="/header_profile_img.png"
-                      alt="souvik_hazra"
-                      width={50}
-                      height={50}
-                      className="h-full rounded-full bg-cover bg-top  border-violet-500 border-2"
-                    />
-                    <p className="cursor-pointer">
-                      <span className="tracking-wider">SOUVIK</span>
-                      <span className="tracking-wider"> HAZRA</span>
-                    </p>
-                  </div>
-                </SheetTitle>
-              </SheetHeader>
-              <div>
-                <div className="cursor-pointer py-4 border border-x-0 border-t-0 pb-2 font-bold text-[#4A4a65] hover:bg-gray-300 transition-all ease-linear duration-200 rounded-md">
-                  <a
-                    href="#homeSection"
-                    onClick={(e) => handleInnerLinks(e, "homeSection")}
-                    className="flex flex-row items-center gap-1 text-sm w-full mb-1 px-2 tracking-wider"
-                  >
-                    <HomeIcon className="h-[1rem]" />
-                    <span>HOME</span>
-                  </a>
-                </div>
-                <div className="cursor-pointer py-4 border border-x-0 border-t-0 pb-2 font-bold text-[#4A4a65] hover:bg-gray-300 transition-all ease-linear duration-200 rounded-md">
-                  <a
-                    href="#aboutSection"
-                    onClick={(e) => handleInnerLinks(e, "aboutSection")}
-                    className="flex flex-row items-center gap-1 text-sm w-full mb-1 px-2 tracking-wider"
-                  >
-                    <LaughIcon className="h-[1rem]" />
-                    <span>ABOUT</span>
-                  </a>
-                </div>
-                <div className="cursor-pointer py-4 border border-x-0 border-t-0 pb-2 font-bold text-[#4A4a65] hover:bg-gray-300  transition-all ease-linear duration-200 rounded-md">
-                  <a
-                    href="#experienceSection"
-                    onClick={(e) => handleInnerLinks(e, "experienceSection")}
-                    className="flex flex-row items-center gap-1 text-sm w-full mb-1 px-2 tracking-wider"
-                  >
-                    <Briefcase className="h-[1rem]" />
-                    <span>EXPERIENCE</span>
-                  </a>
-                </div>
-                <div className="cursor-pointer py-4 border border-x-0 border-t-0 pb-2 font-bold text-[#4A4a65] hover:bg-gray-300  transition-all ease-linear duration-200 rounded-md">
-                  <a
-                    href="#projectsSection"
-                    onClick={(e) => handleInnerLinks(e, "projectsSection")}
-                    className="flex flex-row items-center gap-1 text-sm w-full mb-1 px-2 tracking-wider"
-                  >
-                    <BriefcaseBusiness className="h-[1rem]" />
-                    <span>PROJECTS</span>
-                  </a>
-                </div>
-                <div className="cursor-pointer py-4 border border-x-0 border-t-0 pb-2 font-bold text-[#4A4a65] hover:bg-gray-300  transition-all ease-linear duration-200 rounded-md">
-                  <a
-                    href="#contactSection"
-                    onClick={(e) => handleInnerLinks(e, "contactSection")}
-                    className="flex flex-row items-center gap-1 text-sm w-full mb-1 px-2 tracking-wider"
-                  >
-                    <Contact className="h-[1rem]" />
-                    <span>CONTACT</span>
-                  </a>
-                </div>
-              </div>
-              <div className="flex flex-row justify-center items-center mt-4">
-                <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100">
-                  <a
-                    href="https://www.linkedin.com/in/souvik-hazra-202321252/"
-                    target="_blank"
-                  >
-                    <Image
-                      src="/linkedin.svg"
-                      height={30}
-                      width={30}
-                      alt="linkedin"
-                    />
-                  </a>
-                </div>
+          <Contact className="h-4 w-4" />
+          <span>CONTACT</span>
+        </button>
+      </div>
 
-                <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100 ">
-                  <a href="https://github.com/Mr-R-e-X" target="_blank">
-                    <Image
-                      src="/github.svg"
-                      height={30}
-                      width={30}
-                      alt="github"
-                    />
-                  </a>
+      {/* Mobile Menu */}
+      <div className="lg:hidden">
+        <Sheet>
+          <SheetTrigger>
+            <div className="p-2 border rounded-md">
+              <MenuIcon />
+            </div>
+          </SheetTrigger>
+          <SheetContent className="bg-[#FEFEFE] dark:bg-[#1c1c24]">
+            <SheetHeader>
+              <SheetTitle>
+                <div className="flex items-center gap-3 font-bold text-lg">
+                  <Image
+                    src="/header_profile_img.png"
+                    alt="souvik_hazra"
+                    width={40}
+                    height={40}
+                    className="rounded-full border-2 border-violet-500"
+                  />
+                  <span className="tracking-widest text-[#4A4A65] dark:text-white">
+                    SOUVIK HAZRA
+                  </span>
                 </div>
+              </SheetTitle>
+            </SheetHeader>
 
-                <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100">
-                  <a href="mailto:souvikhazra151@gmail.com" target="_blank">
-                    <Image src="/mail.svg" height={30} width={30} alt="mail" />
-                  </a>
-                </div>
+            <div className="mt-6 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={`#${link.id}`}
+                  onClick={(e) => handleInnerLinks(e, link.id)}
+                  className="flex items-center gap-2 text-sm font-medium text-[#4A4A65] dark:text-white px-2 py-2 rounded hover:bg-gray-200 dark:hover:bg-[#2a2a38] transition-all"
+                >
+                  {link.icon}
+                  <span>{link.label}</span>
+                </a>
+              ))}
+              <button
+                onClick={() => dispatch({ type: ModalActionEnum.OPEN_CONTACT })}
+                className="flex items-center gap-2 text-sm font-medium text-[#4A4A65] dark:text-white px-2 py-2 rounded hover:bg-gray-200 dark:hover:bg-[#2a2a38] transition-all"
+              >
+                <Contact className="h-4 w-4" />
+                <span>CONTACT</span>
+              </button>
+            </div>
 
-                <div className="p-2 mx-2 border rounded-sm cursor-pointer bg-gray-100">
-                  <a href="/SOUVIK_HAZRA.pdf" download>
-                    <Download height={30} width={30} />
-                  </a>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
+            <div className="flex justify-center gap-3 mt-6">
+              <a
+                href="https://www.linkedin.com/in/souvik-hazra-202321252/"
+                target="_blank"
+                className="p-2 bg-gray-100 dark:bg-[#2a2a38] rounded border"
+              >
+                <Image src="/linkedin.svg" width={24} height={24} alt="linkedin" />
+              </a>
+              <a
+                href="https://github.com/Mr-R-e-X"
+                target="_blank"
+                className="p-2 bg-gray-100 dark:bg-[#2a2a38] rounded border"
+              >
+                <Image src="/github.svg" width={24} height={24} alt="github" />
+              </a>
+              <a
+                href="mailto:souvikhazra151@gmail.com"
+                target="_blank"
+                className="p-2 bg-gray-100 dark:bg-[#2a2a38] rounded border"
+              >
+                <Image src="/mail.svg" width={24} height={24} alt="mail" />
+              </a>
+              <a
+                href="/SOUVIK_HAZRA.pdf"
+                download
+                className="p-2 bg-gray-100 dark:bg-[#2a2a38] rounded border"
+              >
+                <Download className="h-5 w-5" />
+              </a>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </nav>
   );

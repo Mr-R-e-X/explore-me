@@ -9,8 +9,11 @@ import { handleScroll } from '@/hooks/handleInnerLink';
 import { SyntheticEvent } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import { ModalActionEnum, useModal } from '@/contexts/modalContext';
 
 const About = () => {
+  const { dispatch } = useModal();
+
   const handleInnerLinks = (e: SyntheticEvent, id: string): void => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -39,7 +42,7 @@ const About = () => {
           ))}
         </div>
         <Button
-          onClick={(e) => handleInnerLinks(e, 'contactSection')}
+          onClick={() => dispatch({ type: ModalActionEnum.OPEN_CONTACT })}
           className="mt-8 bg-[#4F4D69] hover:bg-[#3f3f56] text-white px-6 py-3 text-sm font-semibold rounded-lg flex items-center gap-2 mx-auto transition-transform hover:scale-105"
         >
           <Contact size={18} />

@@ -1,24 +1,25 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
-import { ThemeContextProvider } from "@/contexts/themeContext";
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import './globals.css';
+import { Toaster } from '@/components/ui/toaster';
+import { ThemeContextProvider } from '@/contexts/themeContext';
+import { ModalProvider } from '@/contexts/modalContext';
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+  weight: '100 900',
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
+  weight: '100 900',
 });
 
 export const metadata: Metadata = {
-  title: "Souvik Hazra",
+  title: 'Souvik Hazra',
   description:
-    "Portfolio Information Website. From server to client-side, I create comprehensive web solutions that fuel the product’s success.",
+    'Portfolio Information Website. From server to client-side, I create comprehensive web solutions that fuel the product’s success.',
 };
 
 export default function RootLayout({
@@ -32,12 +33,12 @@ export default function RootLayout({
         <link rel="icon" href="/icon.png" type="image/png" />
       </head>
       <ThemeContextProvider>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {children}
-          <Toaster />
-        </body>
+        <ModalProvider>
+          <body className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen`}>
+            {children}
+            <Toaster />
+          </body>
+        </ModalProvider>
       </ThemeContextProvider>
     </html>
   );

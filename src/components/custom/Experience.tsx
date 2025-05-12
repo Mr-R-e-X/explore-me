@@ -7,7 +7,7 @@ const experienceData = [
     company: 'Prodios Labs',
     logo: '/prodios_logo.svg',
     tools: prodiosSkills,
-    date: '2025-MAY to Present',
+    date: '2025-MAY',
   },
   {
     title: 'Software Development Engineer (Intern)',
@@ -21,7 +21,7 @@ const experienceData = [
     company: 'Sunrise Mentors Private Limited',
     logo: '/cn_exp.svg',
     tools: skillExp,
-    date: '2024-JAN to 2025-JAN',
+    date: '2024-JAN to 2024-DEC',
   },
 ];
 
@@ -45,7 +45,7 @@ const Experience = () => {
                 key={index}
                 className="relative bg-white border border-gray-200 shadow-md rounded-xl p-6 w-full mx-auto flex flex-col gap-4"
               >
-                {exp.date.includes('Present') && (
+                {!exp.date.includes('to') && (
                   <div className="absolute top-4 right-4 w-3.5 h-3.5 rounded-full bg-green-500 animate-pulse shadow-md" />
                 )}
                 <div className="flex items-center gap-4">
