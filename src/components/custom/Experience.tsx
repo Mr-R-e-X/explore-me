@@ -1,5 +1,8 @@
+'use client';
 import Image from 'next/image';
 import { edvSkills, skillExp, prodiosSkills } from '@/constants/constants';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const experienceData = [
   {
@@ -24,6 +27,35 @@ const experienceData = [
     date: '2024-JAN to 2024-DEC',
   },
 ];
+
+const ToolCarousel = ({ tools }: { tools: { imgSrc: string; title: string }[] }) => {
+  const [emblaRef] = useEmblaCarousel(
+    {
+      align: 'start',
+      loop: true,
+    },
+    [Autoplay({ delay: 800, stopOnInteraction: false })], // Reduced delay to make the animation smoother
+  );
+
+  return (
+    <div className="embla overflow-hidden w-full" ref={emblaRef}>
+      <div className="embla__container flex gap-6 px-2">
+        {tools.map((tool, idx) => (
+          <div key={idx} className="embla__slide flex items-center gap-2 flex-shrink-0 w-auto">
+            <Image
+              src={tool.imgSrc}
+              alt={tool.title}
+              width={20}
+              height={20}
+              className="object-contain"
+            />
+            <span className="text-sm text-gray-700">{tool.title}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Experience = () => {
   return (
@@ -63,19 +95,8 @@ const Experience = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap justify-around gap-4 pt-2 border-t border-gray-200 mt-2">
-                  {exp.tools.map((tool, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <Image
-                        src={tool.imgSrc}
-                        alt={tool.title}
-                        width={20}
-                        height={20}
-                        className="object-contain"
-                      />
-                      <span className="text-sm text-gray-700">{tool.title}</span>
-                    </div>
-                  ))}
+                <div className="pt-2 border-t border-gray-200 mt-2">
+                  <ToolCarousel tools={exp.tools} />
                 </div>
               </div>
             ))}
